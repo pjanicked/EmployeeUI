@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Employee Operations</h1>
+  
+    <a href="#" routerLink="/add/" class="btn btn-success">Add New Employee</a>
+    <br/> <br>
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Mobile</th>
+        <th width="300px">Action</th>
+      </tr>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.address }}</td>
+        <td>{{ employee.mobile }}</td>
+        <td>
+          <a href="#" [routerLink]="['/view/', employee.id]" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/edit/', employee.id]" class="btn btn-info">Edit</a>
+          <button type="button" (click)="deletePost(employee.id)" class="btn btn-info">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </div>
